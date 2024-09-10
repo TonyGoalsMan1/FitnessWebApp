@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование Тренировки</title>
+</head>
+<body>
+    <h1>Редактирование Записи Тренировки</h1>
+    <form method="post">
+        <div>
+            <label for="progress_notes">Заметки о Прогрессе:</label>
+            <textarea id="progress_notes" name="progress_notes">{{ training.progress_notes }}</textarea>
+        </div>
+        <div>
+            <input type="submit" value="Сохранить изменения">
+        </div>
+    </form>
+    <a href="{{ url_for('list_trainings') }}">Вернуться к списку тренировок</a>
+</body>
+</html>

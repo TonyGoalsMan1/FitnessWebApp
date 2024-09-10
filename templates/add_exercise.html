@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление Упражнения</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Добавление Упражнения</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="exercise_name">Название упражнения:</label>
+                <input type="text" id="exercise_name" name="exercise_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="description">Описание:</label>
+                <textarea id="description" name="description" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить упражнение" class="btn btn-primary">
+            </div>
+        </form>
+        <a href="{{ url_for('training_detail', plan_id=training_id) }}" class="btn btn-secondary btn-back">Вернуться к деталям тренировки</a>
+    </div>
+
+    <!-- Подключение Bootstrap JavaScript и зависимостей -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

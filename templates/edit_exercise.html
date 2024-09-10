@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование Упражнения</title>
+</head>
+<body>
+    <h1>Редактирование Упражнения</h1>
+    <form method="post">
+        <div>
+            <label for="exercise_name">Название упражнения:</label>
+            <input type="text" id="exercise_name" name="exercise_name" value="{{ exercise.exercise_name }}">
+        </div>
+        <div>
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description">{{ exercise.description }}</textarea>
+        </div>
+        <div>
+            <input type="submit" value="Сохранить изменения">
+        </div>
+    </form>
+    <a href="{{ url_for('training_detail', plan_id=exercise.training_id) }}">Вернуться к деталям тренировки</a>
+</body>
+</html>

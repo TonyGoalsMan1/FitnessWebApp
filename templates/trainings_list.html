@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<style>
+    .training-plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center-align text */
+        margin-bottom: 20px; /* Consistent spacing between cards */
+        width: 100%; /* Full width to align all cards equally */
+        box-sizing: border-box; /* Include padding and border in the width */
+        padding: 10px; /* Padding inside each card */
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<style>
+    .training-plan-card {
+        border: 1px solid #000; /* Black border */
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+</style>
+
+<style>
+    .training-plan-card {
+        border: 2px solid #007bff; /* Blue border */
+        border-radius: 10px; /* Rounded corners */
+        margin: 10px auto; /* Centered with equal margins */
+        padding: 10px;
+        box-sizing: border-box;
+        max-width: 300px; /* Consistent width for all cards */
+        text-align: center; /* Center align text */
+    }
+</style>
+
+<style>
+    .training-plan-card {
+        background-color: #f8f9fa; /* Light grey background */
+        border-radius: 10px; /* Keeping the rounded corners */
+        padding: 10px;
+        margin: 10px auto; /* Centered with equal margins */
+        box-sizing: border-box;
+        max-width: 300px; /* Consistent width for all cards */
+        text-align: center; /* Center align text */
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Фитнес-Приложение</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('list_trainings') }}">Тренировки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('list_trainers') }}">Тренеры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('add_training') }}">Добавить тренировку</a>
+                </li>
+                <!-- Добавьте дополнительные ссылки при необходимости -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Раздел Планов Тренировок -->
+<section id="training-plans">
+</section>
+    <div class="container">
+        {% for plan in training_plans %}
+            <div class="training-plan-card">
+                <h3 class="training-plan-title">{{ plan.plan_name }}</h3>
+                <p class="training-plan-description">{{ plan.description }}</p>
+
+                <a href="/training_detail/{{ plan.id }}" class="select-plan-button">Выбрать план</a>
+
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>История питания</title>
+    <!-- Ссылка на Bootstrap CSS -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>История питания</h2>
+        <ul class="list-group">
+            {% for record in history %}
+                <li class="list-group-item">
+                    Дата: {{ record.meal_date }} - План: {{ record.meal_plan.meal_plan_name }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

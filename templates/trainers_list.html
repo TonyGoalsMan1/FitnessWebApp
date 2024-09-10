@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список тренеров</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .trainer-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+        }
+        .trainer-name {
+            color: #007bff;
+            font-size: 1.2em;
+        }
+        .trainer-email {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Тренеры</h2>
+        <div>
+            {% for trainer in trainers %}
+                <div class="trainer-item">
+                    <div class="trainer-name">{{ trainer.trainer_name }}</div>
+                    <div class="trainer-email">{{ trainer.email }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
